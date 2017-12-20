@@ -1,0 +1,24 @@
+{
+  "name": "mongooseexample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buchaprashant/NodePractice.git"
+  },
+  "author": "Prashant Bucha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/buchaprashant/NodePractice/issues"
+  },
+  "homepage": "https://github.com/buchaprashant/NodePractice#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "mongoose": "^4.13.7"
+  }
+}
