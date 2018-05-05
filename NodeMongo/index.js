@@ -5,8 +5,8 @@ const dboper = require('./operations');
 const url = "mongodb://localhost:27017/conFusion";
 
 mongoClient.connect(url)
-.then((err,db)=>{
-    assert.equal(err,null);
+.then((db)=>{
+    //assert.equal(err,null);
     console.log("Connected to server correctly");
     const collection = db.collection("dishes");
     
@@ -19,7 +19,7 @@ mongoClient.connect(url)
         console.log(err);
     })
     .then((docs) => {
-        assert.equal(err,null);
+        //assert.equal(err,null);
         console.log("\nFound: " + docs);
         return dboper.updateDoc(db, { name: "Vadonut" },{ description: "Updated Test" }, "dishes")
     })
@@ -34,7 +34,7 @@ mongoClient.connect(url)
         console.log(err);
     })
     .then((docs) => {
-        assert.equal(err,null);
+        //assert.equal(err,null);
         console.log("\nFound: " + docs);
         return db.dropCollection("dishes")
     })
@@ -48,6 +48,7 @@ mongoClient.connect(url)
     .catch((err) => {
         console.log(err);
     })
-.catch((err) => {console.log(err);})
-});
+    .catch((err) => { console.log(err); } );
+})
+.catch((err) => { console.log(err); } );
 

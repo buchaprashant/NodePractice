@@ -7,15 +7,15 @@ exports.insertDoc = (db, document, collection, callback) => {
 
 exports.findDoc = (db, collection, callback) => {
     const collec = db.collection(collection);
-    collec.find({}).toArray();
+    return collec.find({}).toArray();
 };
 
 exports.removeDoc = (db, document, collection, callback) => {
     const collec = db.collection(collection);
-    collec.deleteOne(document);
+    return collec.deleteOne(document);
 };
 
 exports.updateDoc = (db, document, update, collection, callback) => {
     const collec = db.collection(collection);
-    collec.updateOne(document, { $set: update }, null);
+    return collec.updateOne(document, { $set: update }, null);
 };
