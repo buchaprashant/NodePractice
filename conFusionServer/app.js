@@ -10,6 +10,7 @@ var dishRouter = require('./routes/dishRouter');
 var promoRouter = require('./routes/promoRouter');
 var leaderRouter = require('./routes/leaderRouter');
 var users = require('./routes/users');
+var config = require('./config');
 var passport = require('passport');
 var authenticate = require('./authenticate');
 var app = express();
@@ -20,7 +21,7 @@ mongoose.Promise = require('bluebird');
 const Dishes = require('./models/dishes');
 
 // Connection URL
-const url = 'mongodb://localhost:27017/conFusion';
+const url = config.mongoUrl;
 const connect = mongoose.connect(url, {
     /* other options */
   });
@@ -48,7 +49,7 @@ app.use(session({
 }));
 
 app.use(passport.initialize());
-app.use(passport.session());
+//app.use(passport.session());
 //app.use('/', index);
 app.use('/users', users);
 
