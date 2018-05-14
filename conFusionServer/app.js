@@ -6,13 +6,17 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var FileStore = require('session-file-store')(session);
+var passport = require('passport');
+
 var dishRouter = require('./routes/dishRouter');
 var promoRouter = require('./routes/promoRouter');
 var leaderRouter = require('./routes/leaderRouter');
 var users = require('./routes/users');
-var config = require('./config');
-var passport = require('passport');
 var authenticate = require('./authenticate');
+var config = require('./config');
+var uploadRouter = require('./routes/uploadRouter');
+
+
 var app = express();
 
 const mongoose = require('mongoose');
@@ -83,6 +87,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/dishes', dishRouter);
 app.use('/promotions', promoRouter);
 app.use('/leaders', leaderRouter);
+app.use('/imageUpload', uploadRouter); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
