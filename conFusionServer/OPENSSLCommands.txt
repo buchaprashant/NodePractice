@@ -1,0 +1,3 @@
+genrsa -des3 -out private.key 4096
+req -config D:\OpenSSL-Win32\bin\cnf\openssl.cnf -new -key private.key -out cert.csr
+x509 -req -days 365 -in cert.csr -signkey private.key -out certificate.crt
