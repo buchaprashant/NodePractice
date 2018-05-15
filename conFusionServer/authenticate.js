@@ -3,7 +3,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var User = require('./models/users');
 var JwtStrategy = require('passport-jwt').Strategy;
 var ExtractJwt = require('passport-jwt').ExtractJwt;
-const cors = require('cors');
+const cors = require('./routes/cors');
 var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 
 var config = require('./config.js');
